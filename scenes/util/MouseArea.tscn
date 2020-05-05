@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 0.816229
+
+[node name="MouseArea" type="Area2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -3.01775
+margin_top = -2.85123
+margin_right = 2.98225
+margin_bottom = 3.14877
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Game.gd" type="Script" id=1]
+[ext_resource path="res://scenes/BoardController.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Boards/Board_UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/InventoryUI.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Shop/UnitShop.tscn" type="PackedScene" id=5]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="BoardController" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Board_UI" parent="BoardController" instance=ExtResource( 3 )]
+editor/display_folded = true
+
+[node name="Button2" type="Button" parent="BoardController/Board_UI"]
+margin_left = 909.0
+margin_top = 13.0
+margin_right = 1005.0
+margin_bottom = 46.0
+text = "Change Level"
+
+[node name="InventoryUI" type="Node2D" parent="."]
+position = Vector2( 112.835, 747.378 )
+script = ExtResource( 4 )
+
+[node name="InventoyTiles" type="Node2D" parent="InventoryUI"]
+position = Vector2( -2.73349, 0.714844 )
+
+[node name="Units" type="Node2D" parent="InventoryUI"]
+position = Vector2( -1.01486, 1.76105 )
+
+[node name="UnitShop" parent="." instance=ExtResource( 5 )]
+position = Vector2( 598.177, 525.19 )
+
+[connection signal="pressed" from="BoardController/Board_UI/Button" to="BoardController" method="start_round"]
+[connection signal="pressed" from="BoardController/Board_UI/Button2" to="BoardController" method="change_map"]
+[connection signal="pressed" from="BoardController/Board_UI/Button2" to="BoardController" method="_on_Button_pressed"]
+
+[editable path="BoardController/Board_UI"]

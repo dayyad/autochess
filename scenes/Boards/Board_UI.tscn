@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="Board_UI" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_right = 115.0
+margin_bottom = 77.0
+text = "First Level
+"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 8.58953
+margin_top = 84.4104
+margin_right = 96.5895
+margin_bottom = 127.41
+text = "Start Round"
+

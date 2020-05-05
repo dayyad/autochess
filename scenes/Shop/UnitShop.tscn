@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/Shop/UnitShop.gd" type="Script" id=1]
+
+[node name="UnitShop" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="UnitsForSale" type="Node2D" parent="."]
+position = Vector2( 183.515, 113.727 )
+
+[node name="ColorRect" type="ColorRect" parent="UnitsForSale"]
+margin_left = -3.87714
+margin_top = -41.3553
+margin_right = 645.123
+margin_bottom = 216.645
+color = Color( 0.619608, 0.513726, 0.513726, 0.207843 )
+
+[node name="UnitsInInventory" type="Node2D" parent="."]
+position = Vector2( 211.946, 378.661 )
+
+[node name="ColorRect" type="ColorRect" parent="UnitsInInventory"]
+margin_left = -29.7242
+margin_top = -40.0631
+margin_right = 619.276
+margin_bottom = 217.937
+color = Color( 0.513726, 0.517647, 0.619608, 0.207843 )
+
+[node name="PlayerGold" type="TextEdit" parent="."]
+margin_left = 58.0001
+margin_top = 18.0
+margin_right = 152.0
+margin_bottom = 57.0
+text = "Gold: 0"
+

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Units/PlayerUnits/AntUnit.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Units/PlayerUnits/ant.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Units/UI.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.2038, 33.0426 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 114.965
+
+[node name="AntUnit" type="Node2D"]
+position = Vector2( -0.315567, -3.8147e-006 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="UnitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnitArea"]
+shape = SubResource( 1 )
+
+[node name="DetectorArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorArea"]
+shape = SubResource( 2 )
+
+[node name="ant" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="UI" parent="." instance=ExtResource( 3 )]
+
