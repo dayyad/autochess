@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/MainMenu/MainMenu.gd" type="Script" id=1]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 487.965
+margin_top = 420.243
+margin_right = 618.965
+margin_bottom = 480.243
+text = "Board"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 648.955
+margin_top = 422.153
+margin_right = 779.955
+margin_bottom = 482.153
+text = "Shop"
+
+[connection signal="pressed" from="Button" to="." method="request_board_open"]
+[connection signal="pressed" from="Button2" to="." method="request_shop_open"]

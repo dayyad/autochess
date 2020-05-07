@@ -30,3 +30,7 @@ func buy_unit(unit : PurchasableUnit):
 		
 	pass
 	
+
+func request_shop_close():
+	StateController.request_main_menu_open()
+	pass 

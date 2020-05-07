@@ -16,7 +16,6 @@ var state
 
 func _ready():
 	state = MAIN_MENU
-	emit_signal("open_main_menu")
 
 func request_shop_open():
 	if state == MAIN_MENU:

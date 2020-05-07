@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 
 [node name="UnitsForSale" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 183.515, 113.727 )
 
 [node name="ColorRect" type="ColorRect" parent="UnitsForSale"]
@@ -16,6 +17,7 @@ margin_bottom = 216.645
 color = Color( 0.619608, 0.513726, 0.513726, 0.207843 )
 
 [node name="UnitsInInventory" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 211.946, 378.661 )
 
 [node name="ColorRect" type="ColorRect" parent="UnitsInInventory"]
@@ -32,3 +34,11 @@ margin_right = 152.0
 margin_bottom = 57.0
 text = "Gold: 0"
 
+[node name="CloseButton" type="Button" parent="."]
+margin_left = 1169.57
+margin_top = 6.06662
+margin_right = 1268.57
+margin_bottom = 53.0666
+text = "Back to Menu"
+
+[connection signal="pressed" from="CloseButton" to="." method="request_shop_close"]
