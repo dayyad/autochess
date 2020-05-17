@@ -25,6 +25,7 @@ func _process(delta):
 func buy_unit(unit : PurchasableUnit):
 	if(InventoryController.gold >= unit.price):
 		InventoryController.gold -= unit.price
+		unit.remove_child(unit.unit)
 		InventoryController.add_unit(unit.unit)
 		unit.queue_free();
 		
