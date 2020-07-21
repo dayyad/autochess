@@ -62,11 +62,22 @@ func look_for_target():
 	pass
 
 func _game_loaded():
+	_link_to_tile_beneath();
+	
+# Attempts to link this unit to the tile that it is hovering over.
+func _link_to_tile_beneath() -> bool:
 	var empty_tiles = CollisionController._get_empty_tiles_in_area($UnitArea);
 	if(empty_tiles.size() > 0):
 		var tile : Tile = empty_tiles[0];
 		tile._set_tile_empty(false)
 		on_tile = tile
+		return true
+	return false
+	
+func _move_to_linked_tile():
+	if on_tile == null:
+		return
+	MoveController.tween_unit_to_tile(self, on_tile)
 	pass
 
 func _do_damage(damage):

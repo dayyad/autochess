@@ -15,7 +15,6 @@ func close_main_menu():
 	pass
 	
 func open_main_menu():
-	print("aasdsda")
 	mainMenu = mainMenuPrefab.instance()
 	add_child(mainMenu)
 	pass
